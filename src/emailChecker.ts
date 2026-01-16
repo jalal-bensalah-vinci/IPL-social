@@ -3,6 +3,10 @@ function emailChecker(mail : string) : boolean{
         return false;
     }
     
+    if(mail.includes(" ")){
+        return false;
+    }
+
     const parts = mail.split("@");
     const domain = parts[1];
 
@@ -14,14 +18,10 @@ function emailChecker(mail : string) : boolean{
         return false;
     }
 
-    if(mail.includes(" ")){
-        return false;
-    }
-
     if(parts[0].length == 0){
         return false;
     }
-    
+
     return true;
 }
 
