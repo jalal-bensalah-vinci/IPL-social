@@ -10,6 +10,10 @@ function emailChecker(mail : string) : boolean{
         return false;
     }
 
+    if(domain.endsWith(".")){
+        return false;
+    }
+
     return true;
 }
 
