@@ -17,6 +17,10 @@ function emailChecker(mail : string) : boolean{
     if(mail.includes(" ")){
         return false;
     }
+
+    if(parts[0].length == 0){
+        return false;
+    }
     
     return true;
 }
