@@ -41,3 +41,5 @@ Run the tests:
 npm test
 ```
 All tests pass successfully.
+
+P-S: I have deleted the branch (dev) I worked on after the Pull Request
