@@ -1,32 +1,32 @@
 import emailChecker from "../src/emailChecker";
 
-describe("Test de la fonction emailChecker",() => {
+describe("Testing the emailChecker function",() => {
 
-    test("Email ne contenant pas '@': email invalide",() =>{
+    test("Email does not contain '@': invalid email",() =>{
         expect(emailChecker("abcgmail.com")).toBe(false);
     });
 
-    test("Email ne contenant pas de point dans le nom de domaine: email invalide",() =>{
+    test("Email does not contain a dot in the domain name: invalid email",() =>{
         expect(emailChecker("abc@gmailcom")).toBe(false);
     });
 
-    test("Email ayant comme dernier caractère un point: email invalide",() =>{
+    test("Email ending with a dot: invalid email",() =>{
         expect(emailChecker("abc@gmail.com.")).toBe(false);
     });
 
-    test("Email contenant des espace: email invalide",() =>{
+    test("Email containing spaces: invalid email",() =>{
         expect(emailChecker("abc @ gmail.com")).toBe(false);
     });
 
-    test("Email ne contient pas de texte avant le '@': email invalide",() =>{
+    test("Email does not contain text before the '@': invalid email",() =>{
         expect(emailChecker("@gmail.com")).toBe(false);
     });
 
-    test("Email ne contient pas de texte après le '@': email invalide",() =>{
+    test("Email does not contain text after the '@': invalid email",() =>{
         expect(emailChecker("abc@")).toBe(false);
     });
 
-    test("Email valide",() =>{
+    test("Valid email address",() =>{
         expect(emailChecker("abc@gmail.com")).toBe(true);
     });
 });
