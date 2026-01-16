@@ -10,6 +10,10 @@ describe("Test de la fonction emailChecker",() => {
         expect(emailChecker("abc@gmailcom")).toBe(false);
     });
 
+    test("Email ayant comme dernier caractère un point: email invalide",() =>{
+        expect(emailChecker("abc@gmailcom")).toBe(false);
+    });
+
     test("Email contenant des espace: email invalide",() =>{
         expect(emailChecker("abc @ gmail.com")).toBe(false);
     });
